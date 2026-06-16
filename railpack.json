@@ -1,14 +1,22 @@
 {
-  "$schema": "https://schema.railpack.com",
-  "buildAptPackages": [
-    "chromium",
-    "chromium-driver"
-  ],
-  "deploy": {
-    "aptPackages": [
-      "chromium",
-      "chromium-driver"
+    "$schema": "https://schema.railpack.com",
+    "buildAptPackages": [
+        "chromium",
+        "chromium-driver",
+        "fonts-liberation",
+        "libnss3",
+        "libxss1",
+        "libasound2"
     ],
-    "startCommand": "python file_bot.py"
-  }
+    "deploy": {
+        "aptPackages": [
+            "chromium",
+            "chromium-driver",
+            "fonts-liberation",
+            "libnss3",
+            "libxss1",
+            "libasound2"
+        ],
+        "startCommand": "python file_bot.py"
+    }
 }
