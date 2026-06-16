@@ -16,11 +16,9 @@ RUN apt-get update && apt-get install -y \
     libxfixes3 \
     fonts-liberation \
     --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/* \
-    && ln -sf /usr/bin/chromium /usr/bin/google-chrome \
-    && ln -sf /usr/bin/chromium-driver /usr/bin/chromedriver
+    && rm -rf /var/lib/apt/lists/*
 
-RUN which chromedriver && chromedriver --version
+RUN find / -name "chromedriver*" 2>/dev/null || echo "NOT FOUND"
 
 ENV PYTHONUNBUFFERED=1
 ENV DISPLAY=:99
