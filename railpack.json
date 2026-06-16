@@ -1,7 +1,18 @@
 {
   "$schema": "https://schema.railpack.com",
-  "buildAptPackages": ["chromium", "chromium-driver"],
+  "steps": {
+    "setup": {
+      "commands": [
+        "apt-get update && apt-get install -y chromium chromium-driver --no-install-recommends"
+      ]
+    },
+    "install": {
+      "commands": [
+        "pip install -r requirements.txt"
+      ]
+    }
+  },
   "deploy": {
-    "aptPackages": ["chromium", "chromium-driver"]
+    "startCommand": "python file_bot.py"
   }
 }
