@@ -20,10 +20,11 @@ RUN apt-get update && apt-get install -y \
     && ln -sf /usr/bin/chromium /usr/bin/google-chrome \
     && ln -sf /usr/bin/chromium-driver /usr/bin/chromedriver
 
+RUN which chromedriver && chromedriver --version
+
 ENV PYTHONUNBUFFERED=1
 ENV DISPLAY=:99
 ENV CHROME_BIN=/usr/bin/chromium
-ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
 
 WORKDIR /app
 COPY requirements.txt .
